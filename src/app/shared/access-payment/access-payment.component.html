@@ -1,0 +1,311 @@
+<div class="container-fluid">
+    <div class="logo">
+        <h3>Logo</h3>
+    </div>
+    <div class="container mt-5">
+        <div class="page-header d-flex justify-content-center">
+            <h2>Activate Your Account</h2>
+        </div>
+        <div class="page-header d-flex justify-content-center">
+        <p>Chooose a package that suits you, invest and start trading</p>
+        </div>
+        <div class="page-body mt-4">
+            <div class="col-3 px-2">
+                <div class="card shadow bg-white rounded-2 border-0">
+                    <div class="card-body">
+                        <div class="header">
+                    <h6 class="text-center">Basic</h6>
+                    <h3 class="text-center">$260</h3>
+                </div>
+                    <hr class="mx-5">
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                        <p >Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                        <p >Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                        <p >Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                        <p >Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                        <p >Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                        <p style="color: #E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                        <p style="color: #E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                        <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                        <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                        <style type="text/css"> .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } .btcpay-form--inline { flex-direction: row; } .btcpay-form--block { flex-direction: column; } .btcpay-form--inline .submit { margin-left: 15px; } .btcpay-form--block select { margin-bottom: 10px; } .btcpay-form .btcpay-custom-container{ text-align: center; }.btcpay-custom { display: flex; align-items: center; justify-content: center; } .btcpay-form .plus-minus { cursor:pointer; font-size:25px; line-height: 25px; background: #DFE0E1; height: 30px; width: 45px; border:none; border-radius: 60px; margin: auto 5px; display: inline-flex; justify-content: center; } .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } .btcpay-form select:hover { border-color: #ccc; } #btcpay-input-price { -moz-appearance: none; -webkit-appearance: none; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 5px; line-height: 35px; background: #fff; } #btcpay-input-price::-webkit-outer-spin-button, #btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } </style>
+                        <form method="POST"  action="https://btcpaymerchant.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+                          <input type="hidden" name="storeId" value="5RpZ7e2yDDLSZDVfi56fh19URmmaKBgpsTyUAiiKLnqA" />
+                          <input type="hidden" name="price" value="1" />
+                          <input type="hidden" name="currency" value="USD" />
+                          <input type="image" class="submit" name="submit" src="https://btcpaymerchant.com/img/paybutton/pay.svg" style="width:168px" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor">
+                        </form>
+                    </div>
+
+                    </div>
+                  </div>
+            </div>
+
+
+            
+<form method="POST"  onsubmit="onBTCPayFormSubmit(event);"  action="https://btcpaymerchant.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+  <input type="hidden" name="storeId" value="5RpZ7e2yDDLSZDVfi56fh19URmmaKBgpsTyUAiiKLnqA" />
+  <input type="hidden" name="jsonResponse" value="true" />
+  <input type="hidden" name="price" value="10" />
+  <input type="hidden" name="currency" value="USD" />
+  <input type="image" class="submit" name="submit" src="https://btcpaymerchant.com/img/paybutton/pay.svg" style="width:209px" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor">
+</form>
+
+            <div class="col-3 px-2">
+                <div class="card shadow bg-white rounded-2 border-0">
+                    <div class="card-body">
+                        <div class="header">
+                        <h6 class="text-center">Silver</h6>
+                        <h3 class="text-center">$260</h3>
+                        </div>
+                        <hr class="mx-5">
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color: #E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            <style type="text/css"> .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } .btcpay-form--inline { flex-direction: row; } .btcpay-form--block { flex-direction: column; } .btcpay-form--inline .submit { margin-left: 15px; } .btcpay-form--block select { margin-bottom: 10px; } .btcpay-form .btcpay-custom-container{ text-align: center; }.btcpay-custom { display: flex; align-items: center; justify-content: center; } .btcpay-form .plus-minus { cursor:pointer; font-size:25px; line-height: 25px; background: #DFE0E1; height: 30px; width: 45px; border:none; border-radius: 60px; margin: auto 5px; display: inline-flex; justify-content: center; } .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } .btcpay-form select:hover { border-color: #ccc; } #btcpay-input-price { -moz-appearance: none; -webkit-appearance: none; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 5px; line-height: 35px; background: #fff; } #btcpay-input-price::-webkit-outer-spin-button, #btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } </style>
+                            <form method="POST"  action="https://btcpaymerchant.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+                              <input type="hidden" name="storeId" value="5RpZ7e2yDDLSZDVfi56fh19URmmaKBgpsTyUAiiKLnqA" />
+                              <input type="hidden" name="price" value="30" />
+                              <input type="hidden" name="currency" value="USD" />
+                              <input type="image" class="submit" name="submit" src="https://btcpaymerchant.com/img/paybutton/pay.svg" style="width:168px" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor">
+                            </form>
+                        </div>
+
+                        </div>
+                  </div>
+            </div>
+
+            <div class="col-3 px-2">
+                <div class="card shadow bg-white rounded-2 border-0">
+                    <div class="card-body">
+                        <div class="header">
+                        <h6 class="text-center">Gold</h6>
+                        <h3 class="text-center">$260</h3>
+                        </div>
+                        <hr class="mx-5">
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="btn py-2">Invest</button>
+                        </div>
+
+                        </div>
+                  </div>
+            </div>
+
+            <div class="col-3 px-2">
+                <div class="card shadow bg-white rounded-2 border-0">
+                    <div class="card-body">
+                        <div class="header">
+                        <h6 class="text-center">Plantinum</h6>
+                        <h3 class="text-center">$260</h3>
+                        </div>
+                        <hr class="mx-5">
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Lorem ipsum dolor sit amet elit.</p>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="btn py-2">Invest</button>
+                        </div>
+
+                        </div>
+                  </div>
+            </div>
+
+        </div>
+      <div class="container page-body-mobile mt-5 ">
+        <div class="card shadow bg-white rounded-2 border-0 mb-2 ">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <h6 class="text-left">Basic</h6>
+              <h3 class="text-left">$260</h3>
+            </div>
+            <div>
+              <button class="btn btn-primary">Invest</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card shadow bg-white rounded-2 border-0 mb-2">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <h6 class="text-left">Silver</h6>
+              <h3 class="text-left">$260</h3>
+            </div>
+            <div>
+              <button class="btn btn-primary">Invest</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card shadow bg-white rounded-2 border-0 mb-2">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <h6 class="text-left">Gold</h6>
+              <h3 class="text-left">$260</h3>
+            </div>
+            <div>
+              <button class="btn btn-primary">Invest</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card shadow bg-white rounded-2 border-0 mb-2">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <h6 class="text-left">Plantinum</h6>
+              <h3 class="text-left">$260</h3>
+            </div>
+            <div>
+              <button class="btn btn-primary">Invest</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+        <div class="skip d-flex justify-content-center mt-5">
+            <a>Skip For Now</a>
+        </div>
+
+    </div>
+</div>

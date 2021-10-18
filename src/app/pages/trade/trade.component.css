@@ -1,0 +1,35 @@
+.body {
+    min-height: 100vh;
+    background: linear-gradient(90deg, #0D0D21 0%, #13134A 48.44%, #13136D 100%);
+    color: #ffffff !important;
+  
+  }
+  
+  /* .logo a {
+    font-size: 20px;
+  } */
+  .nav-item a, .navbar-brand{
+    color: #ffffff !important;
+    font-size: 17px;
+  }
+  
+  .navbar-toggler {
+    color: white;
+  }
+  
+  .login-btn {
+    border: white 1px solid;
+    /* background: #312085; */
+    font-size: 12px;
+    width: 160px !important;
+    padding: 13px !important;
+    margin-right: 20px !important;
+   }
+  
+  .signin-btn {
+   border: #13136D 1px solid;
+   background: #312085;
+   font-size: 12px;
+   width: 160px !important;
+   padding: 13px !important;
+  }

@@ -1,0 +1,35 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+  <p style="font-size: 20px; color: white">Verifying...</p>
+</ngx-spinner>
+<div class="container">
+  <div class="page-body mx-5 ">
+      <div class="page-body-image d-flex justify-content-center ">
+           <img src="/assets/images/verify-image.svg" height="250px" width="250px" alt="image"  />
+      </div>
+      <div class="verify-email mt-5 d-flex justify-content-center ">
+          <h4>Verify Your Email</h4>   
+      </div>
+      <div class="verify-email d-flex justify-content-center mt-3">
+      <h6> Check your email address for 4 secret numbers that help us verify your email account</h6>
+  </div>
+  <form [formGroup]="verifyForm" (ngSubmit)="submitVerify()">
+  <div class="d-flex justify-content-center ">
+   
+      <div id="form">
+          <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"  formControlName="verify1"/>
+          <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" formControlName="verify2"/>
+          <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" formControlName="verify3"/>
+          <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" formControlName="verify4"/>
+  
+        </div>
+      
+  </div>
+  <div class="d-flex justify-content-center my-3 mt-4">
+      <button type="submit"  class="btn d-flex justify-content-center px-5">Continue</button>
+  </div>
+</form>
+  <div class="verify-email d-flex justify-content-center  ">
+      <a  class="pointer"(click)="send()">Resend Email</a>
+  </div>
+  </div>
+</div>

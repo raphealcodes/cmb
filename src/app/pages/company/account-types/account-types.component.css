@@ -1,0 +1,235 @@
+.first-row-header{
+    margin-top: 50px !important;
+}
+.first-row-header h1 {
+    font-weight: 600;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+.first-row-body {
+    margin-top: 50px !important;
+}
+
+
+
+
+.page-body {
+    display: flex;
+    justify-content: center;
+  width: 100% !important;
+  }
+  
+  /* .col-3 {
+    max-width: 290px !important;
+  } */
+  
+  .card {
+      background-color: #ffffff !important;
+      border-radius: 7px !important;
+      color: black;
+  
+  }
+  
+  .card-body h3 {
+      font-weight: 600 !important;
+      color: #2CD67C;
+  }
+  
+  .card-body p {
+      font-size: 13px;
+      font-weight: 500 !important;
+  }
+  
+  h6 {
+      font-size: 20px;
+      font-weight: 500;
+  }
+  
+  
+  .invest button {
+      background-color: #312085;
+      color: #FFFFFF;
+      font-size: 14px;
+      width: 110px;
+  
+  }
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .first-row-header h1 {
+        font-weight: 400;
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+ p {
+        color: gray !important;
+        font-size: 12px;
+    }
+    
+    .card-body h6 {
+        color: black !important;
+        font-weight: 600;
+    }
+
+    .page-body {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+       padding-top: 10px !important;
+      }
+
+    
+      .col-3 {
+      width: 100% !important;
+      margin-top: 20px !important;
+      }
+
+
+    
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1028px) {
+    .first-row-header h1 {
+        font-weight: 400;
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+   p {
+        color: gray !important;
+        font-size: 16px;
+    }
+    
+    .card-body h6 {
+        color: black !important;
+        font-weight: 500;
+    }
+    .page-body {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+       padding-top: 10px !important;
+      }
+
+    
+      .col-3 {
+      width: 100% !important;
+      margin-top: 20px !important;
+      }
+}
+
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 767px) {
+    .first-row-header h1 {
+        font-weight: 400;
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+   p {
+        color: gray !important;
+        font-size: 16px;
+    }
+    
+    .card-body h6 {
+        color: black !important;
+        font-weight: 500;
+    }
+    .page-body {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+       padding-top: 10px !important;
+      }
+
+    
+      .col-3 {
+      width: 100% !important;
+      margin-top: 20px !important;
+      }
+ }
+
+ .logo h3 {
+    font-family: 'gilroy', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.container{
+  width: 100%;
+}
+
+.container-fluid{
+  width: 100%;
+}
+
+
+.pointer {
+    cursor: pointer;
+  }
+.page-header h2 {
+    font-weight: 900;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 17px;
+}
+
+.page-body {
+  display: flex;
+  justify-content: center;
+
+}
+
+.col-3 {
+  width: 20% ;
+}
+
+.card {
+    background-color: #ffffff !important;
+    border-radius: 7px !important;
+
+}
+
+.card-body h3 {
+    font-weight: 600 !important;
+    color: #2CD67C;
+}
+
+.card-body p {
+    font-size: 13px;
+    font-weight: 500 !important;
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+button {
+    background-color: #312085;
+    color: #FFFFFF;
+    font-size: 14px;
+    width: 110px;
+
+}
+
+.button1 {
+  background-color: #312085;
+  color: #FFFFFF;
+  font-size: 14px;
+  width: 40px;
+
+}
+
+.skip {
+    font-size: 14px;
+    color: #312085;
+    font-weight: 500 !important;
+    margin-bottom: 20px;
+}
+
+
+.page-body-mobile {
+  display: none;
+}
+

@@ -1,0 +1,214 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)"
+ [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
+<div class="mb-5 pb-5" id="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+  <main role="main" class="col-md-12 ml-sm-auto col-lg-12 my-3">
+    <div class="card-list">
+      <div class="row">
+        <div class="profile-btn">
+          <!-- <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Chat</button> -->
+          <button *ngIf="!show" (click)="showAccount()" class="createbtn" id="Create-post"><i class="fa fa-plus"></i>Add Blog</button>
+          <button *ngIf="show"  (click)="onDrop()" class="createbtn" id="Create-post"><i class="fa fa-plus"></i>Save Blog</button>
+        </div>
+
+        <div class="mt-2 mb-5" *ngIf="show">
+          <div class="d-flex justify-content-center">
+          <form [formGroup]="blogForm">
+          <div class="input-group justify-content-center d-flex">
+            <input formControlName="title" class="form-control" type="text" name="text-1542372332071" id="text-1542372332071" required="required" placeholder="Title">
+            <label for="text-1542372332071">Title</label>
+            <!-- <div class="req-mark">!</div> -->
+          </div>
+          <div class="input-group justify-content-center d-flex">
+            <input  formControlName="link" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="URL">
+            <label for="text-1542372332072">URL</label>
+            <!-- <div class="req-mark">!</div> -->
+          </div>
+        </form>
+      </div>
+          <form id="file-upload-form3" class="uploader3 ">
+            <input id="file-upload3" type="file" name="utility_bill" accept="image/*" #fileInput2
+            (change)="changePicture3($event)"/>
+            
+            <label for="file-upload3" id="file-drag3">
+            <img id="file-image3" [src]="imgURL3"  *ngIf="imgURL3"  alt="Preview" >
+            <div id="start3">
+            <i class="fa fa-download" aria-hidden="true" *ngIf="!imgURL3"></i>
+            <div *ngIf="!imgURL3">Select a file or drag here</div>
+            <div id="notimage3" class="hidden" *ngIf="!imgURL3">Please select an image</div>
+            <span id="file-upload-btn" *ngIf="!imgURL3" class="btn btn-primary">Select a file</span>
+            <span id="file-upload-btn" *ngIf="imgURL3" class="btn btn-primary">Change file</span>
+            </div>
+            <div id="response" class="hidden">
+            <div id="messages"></div>
+            <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+            </progress>
+            </div>
+            </label>
+            </form>
+        </div>
+
+        <div class="profile-btn">
+          <!-- <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Chat</button> -->
+          <button *ngIf="!invoice" (click)="showInvoice()" class="createbtn" id="Create-post"><i class="fa fa-money"></i>Show Invoices</button>
+          <button *ngIf="invoice" (click)="showInvoice()" class="createbtn" id="Create-post"><i class="fa fa-minus"></i>Hide Invoices</button>
+        </div>
+        <div class="projects mb-4" *ngIf="invoice">
+          <div class="projects-inner">
+            <header class="projects-header">
+              <div class="title">All Invoices</div>
+              <!-- <div class="count">| ()</div> -->
+              <i class="zmdi zmdi-download"></i>
+            </header>
+            <table class="projects-table">
+              <thead>
+                <tr>
+               
+                  <th>Date</th>
+                  <th>Tnx Ref</th>
+                  <th>Customer Name</th>
+                  <th>Value of Crypto</th>
+                  <th>Crypto in USD($)</th>
+                  <!-- <th>Budget</th> -->
+                  <th>Tnx Status</th>
+                  <!-- <th class="text-right">Actions</th> -->
+                </tr>
+              </thead>
+              <tbody *ngFor = "let a of invoices">
+              <tr class="pointer"  >
+                <td >
+                  <!-- <figure><img [src]="a.profile_pic ? a.profile_pic : '/assets/images/usersvg.svg'" /></figure> -->
+                  <!-- <div class="member-info"> -->
+                    <p>{{a.created_at| date}}</p>
+                    <!-- <p>UK Design Team</p> -->
+                  <!-- </div> -->
+                </td>
+                <td>
+                  <p>{{a.tnx_ref}}</p>
+                  <!-- <p>Google</p> -->
+                </td>
+                <td>
+                  <p>{{a.customer}}</p>
+                  <!-- <p class="text-danger">Overdue</p> -->
+                </td>
+                <td>
+                  <p>{{a.value_of_crypto}}</p>
+                  <!-- <p class="text-danger">Overdue</p> -->
+                </td>
+          
+                <td>
+                  <p>{{(a.usd_sent ?a.usd_sent : '-')| number }}</p>
+                  <!-- <p>Paid</p> -->
+                </td>
+          
+                <td class="status">
+                  <span class="status-text status-green" *ngIf="a.tnx_complete===true ">Completed</span>
+                  <span class="status-text status-orange" *ngIf="a.tnx_complete===false">Pending</span>
+                </td>
+        
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card blue">
+            <div class="title">Total Users</div>
+            <i class="zmdi zmdi-upload"></i>
+            <div class="value">{{dataSummary.no_of_users}}</div>
+            <!-- <div class="stat"><b>13</b>% increase</div> -->
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card green">
+            <div class="title">Approved Users</div>
+            <i class="zmdi zmdi-upload"></i>
+          <div class="value">{{dataSummary.accepted_users.length}}</div>
+            <!-- <div class="stat"><b>4</b>% increase</div> -->
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card orange">
+            <div class="title">Pending Users</div>
+            <i class="zmdi zmdi-download"></i>
+            <div class="value">{{dataSummary.pending_users.length}}</div>
+            <!-- <div class="stat"><b>13</b>% decrease</div> -->
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card red">
+            <div class="title">Disabled Users</div>
+            <i class="zmdi zmdi-download"></i>
+            <div class="value">{{dataSummary.rejected_users.length}}</div>
+            <!-- <div class="stat"><b>13</b>% decrease</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects mb-4">
+      <div class="projects-inner">
+        <header class="projects-header">
+          <div class="title">All Users</div>
+          <div class="count">| ({{dataSummary.no_of_users}})</div>
+          <i class="zmdi zmdi-download"></i>
+        </header>
+        <table class="projects-table">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Phone no</th>
+              <th>Country</th>
+              <th>Account Type</th>
+              <!-- <th>Budget</th> -->
+              <th>Status</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor = "let a of data">
+          <tr class="pointer" [routerLink]="['/dashboard/admin', a.id]" routerLinkActive="router-link-active" >
+            <td class="member">
+              <figure><img [src]="a.profile_pic ? a.profile_pic : '/assets/images/usersvg.svg'" /></figure>
+              <div class="member-info">
+                <p>{{a.last_name}}&nbsp;{{a.first_name}}</p>
+                <!-- <p>UK Design Team</p> -->
+              </div>
+            </td>
+            <td>
+              <p>{{a.email}}</p>
+              <!-- <p>Google</p> -->
+            </td>
+            <td>
+              <p>{{a.phone_number}}</p>
+              <!-- <p class="text-danger">Overdue</p> -->
+            </td>
+      
+            <td>
+              <p>{{a.country}}</p>
+              <!-- <p>Paid</p> -->
+            </td>
+            <td>
+              <p>{{a.account_type ? a.account_type : '-'}}</p>
+              <!-- <p>Paid</p> -->
+            </td>
+            <td class="status">
+              <span class="status-text status-green" *ngIf="a.user_status==='Activated' || a.user_status==='Accepted'">Activated</span>
+              <span class="status-text status-orange" *ngIf="a.user_status==='Pending'">Pending</span>
+              <span class="status-text status-red" *ngIf="a.user_status==='Rejected'">Disabled</span>
+            </td>
+            <td>
+                <a class="text-success" *ngIf="a.user_status==='Pending' || a.user_status==='Rejected'" (click)="activate(a.id, 'Accepted')">Activate</a>
+                <a class="text-warning" [routerLink]="['/dashboard/admin', a.id]" *ngIf="a.user_status==='Activated'|| a.user_status==='Accepted'" (click)="activate(a.id)">Upgrade</a><br>
+                <a class="text-danger" *ngIf="a.user_status==='Activated'|| a.user_status==='Accepted'" (click)="activate(a.id, 'Rejected')">Disable</a>
+              </td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+
+
+<div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+    <h3 class="text-center">Deposit</h3>
+</div>
+<div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+    <form [formGroup]="payForm">
+        <input type="number" placeholder="amount" class="form-control form-control-lg" formControlName="amount" (input)="input()">
+    </form>
+</div>
+ <div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+    <button class="btn py-2 pointer" (click)="pay()">Pay {{amountLabel}}</button>
+  </div>
+
+
+  <div *ngIf= 'show ==="false"' class="mt-5">
+    <h3 class="text-center">Scan to Pay</h3>
+    <div  class="d-flex justify-content-center">
+  <img [src]="data" height="300" width="300" alt="Bitcoin QR Code" />
+  </div>
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="copyForm">
+    <input class="form-control form-control-lg" type="text"  readonly formControlName="copy" #input>
+    </form>
+<button class="button1" (click)="copyInputMessage(input)"><i class="fa fa-clipboard" style="font-size: 25px;" aria-hidden="true"></i></button>
+</div>
+  <div class="skip d-flex justify-content-center mt-5">
+    <a class="pointer"  (click)='show = "true"'>Back</a>
+  </div>
+  </div>

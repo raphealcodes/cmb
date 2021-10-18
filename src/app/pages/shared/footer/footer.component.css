@@ -1,0 +1,221 @@
+.ten-row {
+    margin-top: 200px !important;
+    background-color: white !important;
+    /* height: 120px !important; */
+  }
+  
+  .ten-row-word h6 {
+    color: #0D0D21;
+    font-weight: 600 !important;
+  }
+  
+  .ten-row-button button {
+    background-color: #312085;
+    color: #FFFFFF;
+    font-size: 18px;
+    /* font-weight: 600 !important; */
+    letter-spacing: 2px;
+    width: 250px;
+    margin-top: -20px !important;
+  }
+  
+  .eleven-row {
+    background-color: #0D0D21 !important;
+    /* height: 290px !important; */
+  }
+  .nothing-row {
+    background-color: black !important;
+    color: white;
+    /* height: 290px !important; */
+  }
+
+  .content {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 10px;
+
+  }
+  
+  .eleven-row-img {
+    margin-top: -20px !important;
+  }
+  
+  .eleven-row-body-two-first h6 {
+    font-size: 14px;
+  }
+  
+  .eleven-row-body-two a {
+    background-color: #312085;
+    color: #FFFFFF;
+    font-size: 18px;
+    /* font-weight: 600 !important; */
+    letter-spacing: 2px;
+    width: 250px;
+  }
+  
+  .eleven-row-body-two input {
+    background-color: grey;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    /* font-size: 18px; */
+    /* font-weight: 600 !important;
+    letter-spacing: 2px; */
+    width: 250px;
+  }
+
+  .eleven-row-body-first a {
+      text-decoration: none;
+      color: white;
+  }
+  
+
+  .eleven-row-body-first a:hover {
+    text-decoration: none;
+    color: grey;
+}
+  .eleven-row-body-two-second {
+    margin-top: -30px !important;
+  }
+  
+  .eleven-row-body-two-first h5 {
+    font-size: 15px;
+    font-weight: 600 !important;
+  }
+  
+  .eleven-row-body-two-second-1 {
+    /* margin-top: 15px !important; */
+    width: 500px;
+  
+  }
+  
+  .eleven-row-body-two-second-1 a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px!important;
+    font-weight: lighter;
+    
+  }
+  .twelve-row {
+    background-color: white !important;
+  }
+  
+  .twelve-row-body p {
+    color: grey;
+    font-size: 13px !important;
+  }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* .ten-row{
+  width: 100% !important;
+} */
+  .ten-row-body {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+  .ten-row-word {
+    text-align: center !important;
+  }
+
+  .ten-row-button {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  .eleven-row-body, .eleven-row-body-two {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+.eleven-row-img{
+margin-top: 10px !important;
+}
+
+.eleven-row-body-two-second {
+  margin-top: 20px !important;
+}
+
+/* .twelve-row {
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+} */
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .ten-row-body {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+  .ten-row-word {
+    text-align: center !important;
+  }
+
+  .ten-row-button {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  .eleven-row-body, .eleven-row-body-two {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+.eleven-row-img{
+margin-top: 10px !important;
+}
+
+.eleven-row-body-two-second {
+  margin-top: 20px !important;
+}
+}
+
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 767px) { 
+  /* Styles */
+
+  .ten-row-body {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+  .ten-row-word {
+    text-align: center !important;
+  }
+
+  .ten-row-button {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  .eleven-row-body, .eleven-row-body-two {
+    display: flex !important;
+justify-content: center !important;
+  width: 100% !important;
+  flex-direction: column !important
+  }
+
+.eleven-row-img{
+margin-top: 10px !important;
+}
+
+.eleven-row-body-two-second {
+  margin-top: 20px !important;
+}
+}

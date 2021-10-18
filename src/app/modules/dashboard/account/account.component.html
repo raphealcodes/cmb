@@ -1,0 +1,17 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
+<div class="wrapper">
+<ul class="nav nav-tabs d-flex justify-content-center">
+  <li class="nav-item px-5">
+    <a class="nav-link" routerLink="/dashboard/account/personal-info" routerLinkActive="active">Personal Information</a>
+  </li>
+  <li class="nav-item px-5">
+    <a class="nav-link" routerLink="/dashboard/account/uploads" routerLinkActive="active">Upload Documents</a>
+  </li>
+  <li class="nav-item px-5">
+    <a class="nav-link" routerLink="/dashboard/account/settings" routerLinkActive="active">Settings</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+</div>

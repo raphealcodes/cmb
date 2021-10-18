@@ -1,0 +1,52 @@
+.page-body{
+    margin-top: 7em;
+}
+
+.verify-email h2 {
+    font-weight: 900;
+    font-size: 31px;
+    /* font-family: 'gilroy', sans-serif; */
+}
+
+.verify-email h6 {
+    color: #83838A;
+}
+
+button {
+    background-color: #312085;
+    color: #FFFFFF;
+    width: 30%;
+}
+
+.verify-email a {
+    font-size: 13px;
+    color: #312085;
+}
+
+#form {
+    max-width: 240px;
+    margin: 25px auto 0;
+}
+input {
+      margin: 0 5px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 50px;
+      border: solid 1px #C4C4C4;
+      /* box-shadow: 0 0 5px #ccc inset; */
+      outline: none;
+      width: 20%;
+      transition: all .2s ease-in-out;
+      border-radius: 3px;
+      
+      /* &:focus {
+        border-color: purple;
+        box-shadow: 0 0 5px purple inset;
+      }
+      
+      &::selection {
+        background: transparent;
+      } */
+    }
+
+

@@ -1,0 +1,26 @@
+<div class="verify-message" *ngIf="account_verified!=='Accepted'">
+    <p class="py-3 px-3 mt-2"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Note that your account has not been verified and you are unable to trade. <a routerLink="/dashboard/payment" style="text-decoration: underline;"><span>Click Here To Verify Your Account</span></a></p>
+  
+  </div>
+<div class="container" >
+  
+<div  class="d-flex justify-content-center mt-4">
+  <h3 class="text-center">Withdrawal</h3>
+</div>
+<div class="d-flex justify-content-center mt-4">
+  <form [formGroup]="withdrawForm">
+    <div class="form-group my-4">
+      <label for="amount" class="my-2">Amount</label>
+      <input type="number" id="amount" placeholder="amount" class="form-control form-control-lg" formControlName="amount" >
+      </div>
+      <div class="form-group my-4">
+        <label for="address" class="my-2">Wallet Address</label>
+        <input type="text" id="address" placeholder="wallet address" class="form-control form-control-lg" formControlName="wallet_address" >
+        </div>
+
+  </form>
+</div>
+<div  class="d-flex justify-content-center mt-4">
+  <button class="btn py-2 pointer" (click)="withdraw()">Submit</button>
+</div>
+ </div>

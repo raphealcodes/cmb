@@ -1,0 +1,111 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
+<div class="verify-container mt-3 mx-3">
+  <p class="text-left">
+    Dear {{userName}},<br>
+    Account verification is absolutely mandatory for each of our clients as it is
+    part of our Anti-Money Laundering and Fraud program. We
+    realize that verification can be bothersome for some clients so we have
+    created an application to maximally simplify the process of providing
+    the requested documents. To complete the verification on your account please forward
+    the following details:<br>
+    A colored picture/scan of a valid Government issued Photo I.D,
+    front and back (i.e /Driver License/ Passport/ Identification Card)
+  </p>
+
+  <div class="d-flex justify-content-center mt-5 mb-5 pb-5"  *ngIf="uploads.length > 0 && account_verified !== 'Accepted'">
+       <h2 class="text-center">Uploads waiting for verification</h2>
+       <div class="button d-flex justify-content-end"  >
+        <!-- <button class="btn py-3" type="submit">ReUpload</button> -->
+            </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-5 mb-5 pb-5"  *ngIf="uploads.length > 0 && account_verified === 'Accepted'">
+    <h2 class="text-center">Uploads verification completed</h2>
+    <div class="button d-flex justify-content-end"  >
+     <!-- <button class="btn py-3" type="submit">ReUpload</button> -->
+         </div>
+</div>
+
+  <div class="d-flex justify-content-between mt-2"  *ngIf="uploads.length === 0">
+  <div>
+ <p>Upload Front Page of Government Issued ID</p>
+ <!-- Upload  -->
+<form id="file-upload-form" class="uploader">
+<input id="file-upload" type="file" name="fileUpload" accept="image/*" #fileInput
+(change)="changePicture1($event)"/>
+
+<label for="file-upload" id="file-drag">
+<img id="file-image" [src]="imgURL1" *ngIf="imgURL1" alt="Preview" >
+<div id="start">
+<i class="fa fa-download" aria-hidden="true" *ngIf="!imgURL1"></i>
+<div *ngIf="!imgURL1">Select a file or drag here</div>
+<div id="notimage" class="hidden" *ngIf="!imgURL1">Please select an image</div>
+<span id="file-upload-btn" *ngIf="!imgURL1" class="btn btn-primary">Select a file</span>
+<span id="file-upload-btn" *ngIf="imgURL1" class="btn btn-primary">Change file</span>
+</div>
+<div id="response" class="hidden">
+<div id="messages"></div>
+<progress class="progress" id="file-progress" value="0">
+<span>0</span>%
+</progress>
+</div>
+</label>
+</form>
+  </div>
+  <div  *ngIf="uploads.length === 0">
+    <p>Upload Back Page of Government Issued ID</p>
+    <form id="file-upload-form2" class="uploader2"  *ngIf="uploads.length === 0">
+      <input id="file-upload2" type="file" name="fileUpload2" accept="image/*" #fileInput1
+      (change)="changePicture2($event)"/>
+      
+      <label for="file-upload2" id="file-drag2">
+      <img id="file-image2" [src]="imgURL2" *ngIf="imgURL2" alt="Preview" >
+      <div id="start2">
+      <i class="fa fa-download" aria-hidden="true" *ngIf="!imgURL2"></i>
+      <div *ngIf="!imgURL2">Select a file or drag here</div>
+      <div id="notimage2" class="hidden" *ngIf="!imgURL2">Please select an image</div>
+      <span id="file-upload-btn" *ngIf="!imgURL2" class="btn btn-primary">Select a file</span>
+      <span id="file-upload-btn" *ngIf="imgURL2" class="btn btn-primary">Change file</span>
+      </div>
+      <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+      <span>0</span>%
+      </progress>
+      </div>
+      </label>
+      </form>
+  </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <form id="file-upload-form3" class="uploader3" *ngIf="uploads.length === 0">
+      <input id="file-upload3" type="file" name="utility_bill" accept="image/*" #fileInput2
+      (change)="changePicture3($event)"/>
+      
+      <label for="file-upload3" id="file-drag3">
+      <img id="file-image3" [src]="imgURL3"  *ngIf="imgURL3"  alt="Preview" >
+      <div id="start3">
+      <i class="fa fa-download" aria-hidden="true" *ngIf="!imgURL3"></i>
+      <div *ngIf="!imgURL3">Select a file or drag here</div>
+      <div id="notimage3" class="hidden" *ngIf="!imgURL3">Please select an image</div>
+      <span id="file-upload-btn" *ngIf="!imgURL3" class="btn btn-primary">Select a file</span>
+      <span id="file-upload-btn" *ngIf="imgURL3" class="btn btn-primary">Change file</span>
+      </div>
+      <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+      <span>0</span>%
+      </progress>
+      </div>
+      </label>
+      <p class="text-center">Upload a Picture of Utility Bill</p>
+      </form>
+  
+  </div>
+
+  <div class="button d-flex justify-content-end"  *ngIf="uploads.length === 0">
+    <button class="btn py-3" type="submit" (click)="onDrop()">Upload</button>
+        </div>
+
+</div>

@@ -1,0 +1,47 @@
+.body {
+    min-height: 100vh;
+    background: linear-gradient(90deg, #0D0D21 0%, #13134A 48.44%, #13136D 100%);
+    color: #ffffff !important;
+  
+  }
+  .first-row-header{
+    margin-top: 150px !important;
+}
+.first-row-header h1 {
+    font-weight: 600;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+.first-row-body {
+    margin-top: 50px !important;
+}
+
+.first-row-body .card {
+  max-width: 120vh !important;
+}
+
+.card-body p {
+    color: gray !important;
+}
+
+.card-body h6 {
+    color: black !important;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type:circle;
+}
+
+ol {
+    list-style-type: numeric;
+}
+
+ul li {
+    color: black !important;
+}
+
+ol li {
+    color: black !important;
+}

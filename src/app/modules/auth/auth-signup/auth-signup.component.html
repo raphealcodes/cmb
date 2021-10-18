@@ -1,0 +1,164 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+  <p style="font-size: 20px; color: white">Signing up...</p>
+</ngx-spinner>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-4 col-md-4 col-sm-4 col-4 h-100 first-column position-fixed">
+            <div class="container mt-4">
+            <div class="first-column-header col-xl-4 col-md-4 col-sm-4 col-4">
+               <h5 routerLink="/" class="pointer">
+                <img src='/assets/images/logo.svg' width="80" alt="Logo Image">
+               </h5>
+            </div>
+                <div class="first-column-body mt-5">
+                   <div class="first-column-body-word">
+  Register and Start Trading On the Go Easily!
+                   </div>
+                   <div class="first-column-body-image mt-5">
+                    <img src="/assets/images/signup-image.png" class="center img"  alt="image"/>
+                   </div>
+
+                </div>
+
+
+                </div>
+        </div>
+        <div class="col-xl-8 col-md-8 col-sm-8 col-8 px-6 second-column">
+           <div class="container-fluid mt-4">
+               <div class="second-column-header col-xl-7 col-md-7 col-sm-7 col-7 mx-1">
+                <h4 class="pointer" routerLink="/">
+                  <img src='/assets/images/logo.svg' width="80" alt="Logo Image">
+                </h4>
+               <h5>Create an account and</h5>
+               <h2>start trading</h2>
+               <p>All fields are compulsory for security and identification purposes</p>
+               </div>
+               <div class="mx-1 ">
+                <form [formGroup]="signupForm" (ngSubmit)="submitSignup()">
+                        <div class="form-group row my-4">
+                          <div class="form-group col-md-6" id="first">
+                            <label for="firstName" class="my-2">First Name</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   [class.border-danger]="signupForm.get('first_name').invalid && signupForm.get('first_name').touched"
+                                   id="firstName"  formControlName="first_name">
+                            <div class="text-danger" *ngIf = "signupForm.get('first_name').invalid && (signupForm.get('first_name').touched || signupForm.get('first_name').dirty) ">
+                              <small *ngIf = "signupForm.get('first_name').errors?.required"> First name required</small>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="lastName" class="my-2">Last Name</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   [class.border-danger]="signupForm.get('last_name').invalid && signupForm.get('last_name').touched"
+                                   id="lastName" formControlName="last_name">
+                            <div class="text-danger" *ngIf = "signupForm.get('last_name').invalid &&  (signupForm.get('last_name').touched || signupForm.get('last_name').dirty) ">
+                              <small *ngIf = "signupForm.get('last_name').errors?.required"> Last name required</small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row my-4" >
+                            <div class="form-group col-md-6" id="email">
+                              <label for="email" class="my-2">Email</label>
+                              <input type="email" class="form-control form-control-lg"
+                                     [class.border-danger]="signupForm.get('email').invalid && signupForm.get('email').touched"
+                                     id="email" formControlName="email">
+                              <div class="text-danger" *ngIf = "signupForm.get('email').invalid && (signupForm.get('email').touched || signupForm.get('email').dirty)">
+                                <small *ngIf = "signupForm.get('email').errors?.required"> Email required</small>
+                                <small *ngIf = "signupForm.get('email').errors?.pattern"> Please provide a valid email address</small>
+                              </div>
+                            </div>
+                            <div class="form-group col-md-6" >
+                              <label for="phoneNumber" class="my-2">Phone number</label>
+                              <ngx-intl-tel-input
+		[cssClass]="'form-control form-control-lg custom'"
+		[preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+		[enableAutoCountrySelect]="false"
+		[enablePlaceholder]="true"
+		[searchCountryFlag]="true"
+		[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+		[selectFirstCountry]="false"
+		[selectedCountryISO]="CountryISO.Nigeria"
+    [numberFormat]="PhoneNumberFormat.National"
+		[maxLength]="15"
+		[tooltipField]="TooltipLabel.Name"
+    [phoneValidation]="true"
+    name="phone"
+    id="phoneNumber"
+    formControlName="phone_number"
+	></ngx-intl-tel-input>
+                              <div class="text-danger phn" *ngIf = "signupForm.get('phone_number').invalid && signupForm.get('phone_number').touched ">
+                                <small *ngIf = "signupForm.get('phone_number').errors?.required"> Phone number required</small>
+                                <small *ngIf = "signupForm.get('phone_number').errors?.maxlength"> Phone number not valid</small>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="form-group my-4" id="pass">
+                          <label for="password" class="my-2">password</label>
+                          <input type="password" class="form-control form-control-lg" id="password"
+                                 [class.border-danger]="signupForm.get('password').invalid && (signupForm.get('password').touched || signupForm.get('password').dirty)"
+                                 formControlName="password">
+                          <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                          <div class="text-danger" *ngIf = "signupForm.get('password').invalid && (signupForm.get('password').touched || signupForm.get('password').dirty)">
+                            <small *ngIf = "signupForm.get('password').errors?.required"> Password required</small>
+                            <small *ngIf = "signupForm.get('password').errors?.minlength"> Password must be more than 5 character</small></div>
+                          <div class="text-danger">
+                            <small *ngIf = "signupForm.get('password').errors?.passwordStrength"> {{signupForm.get('password').errors['passwordStrength']}}</small>
+                        </div>
+                        </div>
+                        <div class="form-group my-4">
+                          <label for="confirmPassword" class="my-2">confirm password</label>
+                          <input type="password" class="form-control form-control-lg"
+                                 [class.border-danger]="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched || signupForm.errors?.misMatch"
+                                 id="confirmPassword"
+                                  formControlName="confirmPassword">
+                          <span toggle="#confirmPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                          <div class="text-danger" *ngIf = "signupForm.get('confirmPassword').invalid &&  (signupForm.get('confirmPassword').touched || signupForm.get('confirmPassword').dirty) || signupForm.errors?.misMatch">
+                            <small *ngIf = "signupForm.get('confirmPassword').errors?.required"> Password required</small>
+                            <small  *ngIf = "signupForm.errors?.misMatch"> Passwords do not match</small>
+                          </div>
+                        </div>
+
+
+                          <div class="form-group my-4">
+                            <label for="country" class="my-2">country</label>
+                            <select name="" class="form-select form-select-lg" id="country" formControlName="country"
+                                    [class.border-danger]="signupForm.get('country').invalid && signupForm.get('country').touched">
+                                    <option  value="" selected>Select your country</option>
+                                <option *ngFor="let c of country" value="{{c.name}}">{{c.name}}</option>
+                            </select>
+                            <div class="text-danger" *ngIf = "signupForm.get('country').invalid &&  (signupForm.get('country').touched || signupForm.get('country').dirty) ">
+                              <small *ngIf = "signupForm.get('country').errors?.required"> Country required</small>
+                            </div>
+                          </div>
+
+                          <div class="form-group my-4">
+                            <label for="referal_code" class="my-2">referal code</label>
+                            <input type="text" class="form-control form-control-lg"
+                            id="referal_code" formControlName="referal_code">
+                          </div>
+
+
+                        <div class="form-group ">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="check">
+                            <p class="form-check-label" for="gridCheck">
+                              I agree to all the <span><a routerLink="/terms-and-conditions">Terms</a></span>, <span><a routerLink="/privacy-policy">Privacy Policy</a></span>
+                            </p>
+                            <p class="text-danger" *ngIf="signupForm.get('check').value === false">
+                              {{terms}}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                        <button type="submit" [disabled]="signupForm.invalid"  class="btn d-flex justify-content-center">Create Account</button>
+                    </div>
+                      </form>
+                      <div  class="d-flex justify-content-center my-3 foot">
+                          <p>Already have an account? <span><a routerLink="/auth/auth-login">Login</a></span></p>
+                      </div>
+               </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

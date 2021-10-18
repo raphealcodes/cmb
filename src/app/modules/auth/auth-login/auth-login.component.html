@@ -1,0 +1,73 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+  <p style="font-size: 20px; color: white">Signing in...</p>
+</ngx-spinner>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-xl-5 col-md-5 col-sm-5 col-5 h-100 second-column">
+          <div class="container top mt-4 ">
+            <div class="second-column-header col-xl-12 col-md-12 col-sm-12 col-12 mx-1">
+              <h5 class="mb-5"  routerLink="/">
+                <img src='/assets/images/logo.svg' width="80px" alt="Logo Image">
+              </h5>
+              <h2 class="mt-5">Log into your account</h2>
+              <h6>Log into your account to access your trading tools</h6>
+              </div> 
+              <div class="mx-1">
+               <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+                     <div class="form-group my-4">
+                         <label for="email" class="my-2">email</label>
+                         <input type="email" class="form-control form-control-lg" id="email"
+                                [class.border-danger]="loginForm.get('email').invalid && loginForm.get('email').touched"
+                                formControlName="email">
+                       <div class="text-danger" *ngIf = "loginForm.get('email').invalid && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+                         <small *ngIf = "loginForm.get('email').errors?.required"> Email required</small>
+<!--                         <small *ngIf = "loginForm.get('email').errors?.pattern"> Please provide a valid email address</small>-->
+                       </div>
+                       </div>
+                       <div class="form-group my-4">
+                         <label for="password" class="my-2">Password</label>
+                         <input type="password" class="form-control form-control-lg" id="password"
+                                [class.border-danger]="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)"
+                                formControlName="password">
+                         <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                         <div class="text-danger" *ngIf = "loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                           <small *ngIf = "loginForm.get('password').errors?.required"> Password required</small>
+                       </div>
+                       </div>
+
+
+                       <div class=" my-3">
+                       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-lg d-flex justify-content-center p-3">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span class="mt-0 ml-0"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                   </div>
+                     </form>
+                     <div  class=" my-3">
+                         <p>Don't have an account? <span><a routerLink="/auth/auth-signup">Signup</a></span></p>
+                         <p><span><a routerLink="/auth/reset-password">Forgotten Password</a></span></p>
+                     </div>
+              </div>
+
+              </div>
+      </div>
+      <div class="col-xl-7 col-md-7 col-sm-7 col-7 px-6 first-column">
+         <div class="container mt-4">
+          <div class="first-column-header col-xl-5 col-md-5 col-sm-5 col-5">
+            <a routerLink="/">
+              <img src='/assets/images/logo.svg' width="80px" alt="Logo Image">
+            </a>
+         </div>
+             <div class="first-column-body mt-5">
+                <div class="first-column-body-word">
+           Trade Stocks Comfortably From Any Location
+                </div>
+                <div class="first-column-body-image mt-5">
+                 <img src="/assets/images/signin-image.jpg" class="center img" width="370px" height="370px" alt="image"/>
+                </div>
+
+             </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>

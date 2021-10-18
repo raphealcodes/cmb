@@ -1,0 +1,173 @@
+
+<div id="wrapper" class="active">
+  <header>
+      <nav>
+          <!-- Sidebar -->
+          <div id="sidebar-wrapper">
+              <ul id="sidebar_menu" class="sidebar-nav">
+                  <li class="sidebar-brand"><a id="menu-toggle" routerLink="/">
+                    <img src='/assets/images/logo.svg' width="200" alt="Logo Image">
+                  </a></li>
+              </ul>
+              <ul class="sidebar-nav" id="sidebar">
+                
+                  <li>
+                      <a routerLink="/dashboard/trade" routerLinkActive="active">
+                        <i class="fa fa-exchange" aria-hidden="true"></i> Trade
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/dashboard/wallet" routerLinkActive="active">
+                        <i class="fa fa-money" aria-hidden="true"></i> Wallet
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/dashboard/transaction-history" routerLinkActive="active">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i> Transaction History
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/dashboard/analysis" routerLinkActive="active">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i> Analysis
+                      </a>
+                    </li>
+                    <!-- <li>
+                      <a routerLink="/dashboard/withdraw" routerLinkActive="active">
+                        <i class="fa fa-money" aria-hidden="true"></i> Withdraw
+                      </a>
+                    </li> -->
+                    <li>
+                      <a routerLink="/dashboard/account/personal-info" routerLinkActive="active">
+                        <i class="fa fa-cog" aria-hidden="true"></i> Account
+                      </a>
+                    </li>
+                    <li *ngIf="firstPayment" class="header"><a class="btn" routerLink="/dashboard/payment">Deposit</a></li>
+                    <li *ngIf="!firstPayment" class="header"><a class="btn" routerLink="/dashboard/deposit">Deposit</a></li>
+              </ul>
+          </div>
+      </nav>
+  </header>   
+
+
+
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+   <div class="page-content inset">
+    <nav class="fixed-nav-bar">
+      <!-- <a class="brand">
+  Logo
+      </a> -->
+     <a class="link imgr" routerLink="/">
+        <img src='/assets/images/logo.svg' width="30px" height="30px" alt="Logo Image">
+      </a>
+      <!-- <img class="imgr" src='/assets/images/logo.svg' width="20px" height="60px" alt="Logo Image"> -->
+        <a class="link" *ngIf='admin' routerLinkActive="active" routerLink="/dashboard/admin">
+          <i class="fa fa-user" aria-hidden="true"></i> 
+          Admin
+        </a>
+  
+      <a class="link" >Hi, {{name | uppercase}}!</a>
+      <a class="link pointer" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      
+    </nav>  
+ 
+        <router-outlet></router-outlet>
+     </div>
+  </div>
+  <!-- End of Page content -->
+
+ 
+  <!-- <li>
+    <a routerLink="/dashboard/withdraw" routerLinkActive="active">
+      <i class="fa fa-money" aria-hidden="true"></i> Withdraw
+    </a>
+  </li> -->
+
+  <nav class="mobile mobile-bottom-nav">
+      <div class="mobile-bottom-nav__item ">
+          <div class="mobile-bottom-nav__item-content">
+              <a  routerLink="/dashboard/trade" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><i class="fa fa-exchange" aria-hidden="true"></i><br> Trade</a>
+          </div>		
+      </div>
+      <div class="mobile-bottom-nav__item ">
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/dashboard/wallet" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"> <i class="fa fa-money" aria-hidden="true"></i> <br>Wallet</a>
+          </div>		
+      </div>
+      <div class="mobile-bottom-nav__item">		
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/dashboard/transaction-history" routerLinkActive="mobile-bottom-nav__item--active" class="py-3">      <i class="fa fa-tachometer" aria-hidden="true"></i> <br>Transactions</a>
+          </div>
+      </div>
+      <div class="mobile-bottom-nav__item">
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/dashboard/analysis" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <br>Analysis</a>
+          </div>		
+      </div>
+      <div class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__item-content">
+            <a routerLink="/dashboard/account/personal-info" routerLinkActive="mobile-bottom-nav__item--active" class="py-3">  <i class="fa fa-cog" aria-hidden="true"></i><br> Account</a>
+        </div>		
+    </div>
+  </nav>
+</div>
+
+<!-- <script>
+  $("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("active");
+});
+</script> -->
+
+
+<!-- <app-buyer-home></app-buyer-home> -->
+<!-- <div id="wrapper" class="active">
+  <header>
+      <nav> -->
+          <!-- Sidebar -->
+          <!-- <div id="sidebar-wrapper">
+              <ul id="sidebar_menu" class="sidebar-nav pt-3">
+                  <li class="sidebar-brand"><a id="menu-toggle"><img class="w-50" src="/assets/images/renchi-logo.svg" alt=""><span id="main_icon" class="align-justify"><img src="/assets/images/toggle.svg" alt=""></span></a></li>
+              </ul>
+              <ul class="sidebar-nav mt-4" id="sidebar">
+                  <li><a routerLink="/seller-dashboard/seller-home" class="mt-4"><span class="icon-link"><img src="/assets/images/home.svg" alt=""></span>Home</a></li>
+                  <li><a routerLink="/seller-dashboard/seller-wallet" class="mt-4">Wallet<span class="icon-link"><img src="/assets/images/wallet.svg" alt=""></span></a></li>
+                  <li><a routerLink="/seller-dashboard/seller-transaction" class="mt-4">Transactions<span class="icon-link"><img src="/assets/images/trans.svg" alt=""></span></a></li>
+                  <li><a routerLink="/seller-dashboard/seller-settings" class="mt-4">Settings<span class="icon-link"><img src="/assets/images/setting.svg" alt=""></span></a></li>
+                  <li><a  class="logout pt-5"><a (click)="logout()">Logout<span class="icon-link"><img src="/assets/images/power.svg" alt=""></span></a></a></li>
+              </ul>
+          </div>
+      </nav>
+  </header>      -->
+  <!-- Page content -->
+  <!-- <div id="page-content-wrapper">
+     <div class="page-content inset">
+        <router-outlet></router-outlet>
+     </div>
+  </div> -->
+  <!-- End of Page content -->
+
+<!--   
+  <nav class="mobile mobile-bottom-nav">
+      <div class="mobile-bottom-nav__item ">
+          <div class="mobile-bottom-nav__item-content">
+              <a  routerLink="/seller-dashboard/seller-home" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><span><img class="pt-2 pb-1" src="/assets/images/m-home.png" alt=""></span><br>Home</a>
+          </div>		
+      </div>
+      <div class="mobile-bottom-nav__item ">
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/seller-dashboard/seller-wallet" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><span><img class="pt-2 pb-1" src="/assets/images/m-wallet.png" alt=""></span><br>Wallet</a>
+          </div>		
+      </div>
+      <div class="mobile-bottom-nav__item">		
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/seller-dashboard/seller-transaction" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><span><img class="pt-2 pb-1" src="/assets/images/m-trans.png" alt=""></span><br> Transactions</a>
+          </div>
+      </div>
+      <div class="mobile-bottom-nav__item">
+          <div class="mobile-bottom-nav__item-content">
+              <a routerLink="/seller-dashboard/seller-settings" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><span><img class="pt-2 pb-1" src="/assets/images/m-setting.png" alt=""></span><br> Settings</a>
+          </div>		
+      </div>
+  </nav>
+</div> -->
