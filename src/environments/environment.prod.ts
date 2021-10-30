@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://trading-fx.herokuapp.com'
+  url: 'http://157.245.211.229'
 };

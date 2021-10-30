@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {StorageService} from './storage.service';
 import {NavigationService} from './navigation.service';
@@ -241,6 +241,21 @@ export class AuthService {
 getCountry() {
  return this.http.get(`${this.API_URL}/core/countries/`) 
 }
+
+
+getState(countryId: number): Observable<any> {
+  return this.http.get<any>(`${this.API_URL}/core/states/` + countryId);
+}
+
+getCity(countryId: any, stateId: number): Observable<any> {
+  return this.http.get<any>(`${this.API_URL}/core/cities/`+ countryId + '/' + stateId);
+}
+
+
+getSecurityQuestion() {
+  return this.http.get(`${this.API_URL}/auth/security_question/`) 
+ }
+ 
 
 
 }

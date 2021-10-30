@@ -32,10 +32,10 @@ export const dashboardRoutes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      {
-        path: 'trade',
-        component: TradeComponent,
-      },
+      // {
+      //   path: 'trade',
+      //   component: TradeComponent,
+      // },
       {
         path: 'transaction-history',
         component: TransactionHistoryComponent,
@@ -66,10 +66,10 @@ export const dashboardRoutes: Routes = [
           },
         ],
       },
-      {
-        path: 'analysis',
-        component: AnalysisComponent,
-      },
+      // {
+      //   path: 'analysis',
+      //   component: AnalysisComponent,
+      // },
       {
         path: 'deposit',
         component: DepositComponent,

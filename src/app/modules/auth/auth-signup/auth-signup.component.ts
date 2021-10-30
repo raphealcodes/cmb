@@ -34,6 +34,12 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
     CountryISO.UnitedStates,
     CountryISO.UnitedKingdom,
   ];
+
+  qa: any;
+  states: any[];
+  cities: any[];
+  stateLoader = false;
+  cityLoader = false;
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
@@ -44,6 +50,10 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
         first_name: ['', [Validators.required]],
         last_name: ['', [Validators.required]],
         referal_code: [''],
+        dob: ['',Validators.required],
+        security_qa: ['', Validators.required],
+        answer: ['', Validators.required],
+        is_longterm: [false],
         email: [
           '',
           [
@@ -66,11 +76,51 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
         ],
         confirmPassword: ['', [Validators.required]],
         country: ['', [Validators.required]],
+        state: [''],
+        city: [''],
+        countryId: ['', [Validators.required]],
+        stateId: [''],
+        cityId: [''],
         check: [true, [Validators.required]],
       },
       { validator: passwordValidators }
     );
   }
+
+  getState(event?: any): void {
+    if (event !== '') {
+      this.stateLoader = true;
+      const id = this.country.filter((s) => s.name === event)[0]
+        .id;
+      this.signupForm.get('countryId').patchValue(id);
+      this.auth.getState(id).subscribe((data: any) => {
+        this.states = data;
+        this.stateLoader = false;
+      });
+    }
+  }
+
+  
+  getCity(event?: any): void {
+    if (event !== '') {
+      this.cityLoader = true;
+      const id = this.states.filter((s) => s.name === event)[0].id;
+      this.signupForm.get('stateId').patchValue(id);
+      this.auth.getCity(this.signupForm.get('countryId').value, id).subscribe((data: any) => {
+        this.cities = data;
+        this.cityLoader = false;
+      });
+    }
+  }
+
+  
+  setCity = (event: any) => {
+    if (event === '') {
+    } else {
+      const id = this.cities?.filter((s) => s.name === event)[0].cityId;
+      this.signupForm.get('cityId').patchValue(id);
+    }
+  };
 
   submitSignup(): void {
     const {
@@ -79,7 +129,13 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
       email,
       password,
       country,
-      referal_code
+      referal_code,
+      is_longterm,
+      dob,
+      security_qa,
+      answer,
+      state,
+      city,
     } = this.signupForm.value;
     const phone = this.signupForm.get('phone_number').value;
 
@@ -90,7 +146,15 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
       phone_number: phone.e164Number,
       password,
       country,
-      referal_code
+      state,
+      city,
+      referal_code,
+      is_longterm,
+      dob,
+      security_qa: {
+        answer: answer,
+        security_question_id: security_qa
+      },
     };
 
     if (this.signupForm.get('check').value === true) {
@@ -111,6 +175,10 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.auth.getCountry().subscribe((data) => {
       this.country = data;
+    });
+
+    this.auth.getSecurityQuestion().subscribe((data) => {
+      this.qa = data;
     });
   }
 

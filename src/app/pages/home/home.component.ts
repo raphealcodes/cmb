@@ -102,14 +102,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
    }
 
   ngOnInit(): void {
-    this.dashboard.ReloadNeeded.subscribe(
-      () => {
-           this.getAccount();
+    // this.dashboard.ReloadNeeded.subscribe(
+    //   () => {
+    //        this.getAccount();
            
         
-      }
-    );
-    this.getAccount();
+    //   }
+    // );
+    // this.getAccount();
 
   
   }

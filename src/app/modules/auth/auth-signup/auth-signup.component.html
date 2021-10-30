@@ -117,10 +117,21 @@
                           </div>
                         </div>
 
+                        <div class="form-group row my-4" >
 
-                          <div class="form-group my-4">
+                          <div class="form-group col-md-6">
+                            <label for="dob" class="my-2">Date of Birth</label>
+                            <input type="date" class="form-control form-control-lg"
+                                   [class.border-danger]="signupForm.get('dob').invalid && signupForm.get('dob').touched"
+                                   id="dob" formControlName="dob">
+                            <div class="text-danger" *ngIf = "signupForm.get('dob').invalid &&  (signupForm.get('dob').touched || signupForm.get('dob').dirty) ">
+                              <small *ngIf = "signupForm.get('dob').errors?.required"> Date of Birth required</small>
+                            </div>
+                          </div>
+
+                          <div class="form-group  col-md-6">
                             <label for="country" class="my-2">country</label>
-                            <select name="" class="form-select form-select-lg" id="country" formControlName="country"
+                            <select    (change)="getState($event.target.value)"  name="" class="form-select form-select-lg" id="country" formControlName="country"
                                     [class.border-danger]="signupForm.get('country').invalid && signupForm.get('country').touched">
                                     <option  value="" selected>Select your country</option>
                                 <option *ngFor="let c of country" value="{{c.name}}">{{c.name}}</option>
@@ -129,6 +140,130 @@
                               <small *ngIf = "signupForm.get('country').errors?.required"> Country required</small>
                             </div>
                           </div>
+
+                        </div>
+                        <div class="form-group row my-4"  >
+                          <div class="col-lg-6">
+                            <div class="mb-4">
+                              <label class="form-label">State</label>
+                              <select
+                                (change)="getCity($event.target.value)"
+                                formControlName="state"
+                                class="form-select form-select-lg"
+                                placeholder=""
+                                [class.border-danger]="
+                                signupForm.get('state').invalid &&
+                                signupForm.get('state').touched
+                                    "
+                              >
+                                <option  value="">Select state</option>
+                                <option selected value="{{ state.name  }}" *ngFor="let state of states">
+                                  {{ state.name }}
+                                </option>
+                              </select>
+                              <div
+                              class="text-danger"
+                              *ngIf="
+                              signupForm.get('state').invalid &&
+                                (signupForm.get('state').touched ||
+                                signupForm.get('state').dirty)
+                              "
+                            >
+                              <small
+                                *ngIf="signupForm.get('state').errors?.required"
+                              >
+                              State is required</small
+                              >
+                            </div>
+                              <span
+                                *ngIf="stateLoader"
+                                class="field-icon1 toggle-password"
+                              >
+                                <mat-spinner
+                                  strokeWidth="2"
+                                  [diameter]="30"
+                                ></mat-spinner>
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <div class="mb-4">
+                              <label class="form-label">City</label>
+                              <select
+                                (change)="setCity($event.target.value)"
+                                class="form-select form-select-lg"
+                                formControlName="city"
+                                [class.border-danger]="
+                                signupForm.get('city').invalid &&
+                                signupForm.get('city').touched
+                                    "
+                              >
+                                <option selected value="">Select city</option>
+                                <option
+                                  value="{{ city.name }}"
+                                  *ngFor="let city of cities"
+                                >
+                                  {{ city.name }}
+                                </option>
+                              </select>
+                              <div
+                              class="text-danger"
+                              *ngIf="
+                              signupForm.get('city').invalid &&
+                                (signupForm.get('city').touched ||
+                                signupForm.get('city').dirty)
+                              "
+                            >
+                              <small
+                                *ngIf="signupForm.get('city').errors?.required"
+                              >
+                              City is required</small
+                              >
+                            </div>
+                              <span *ngIf="cityLoader" class="field-icon1 toggle-password">
+                                <mat-spinner
+                                  strokeWidth="2"
+                                  [diameter]="30"
+                                ></mat-spinner>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="form-group row my-4" >
+                          <div class="form-group  col-md-6">
+                            <label for="security_qa" class="my-2">security question</label>
+                            <select name="" class="form-select form-select-lg" id="security_qa" formControlName="security_qa"
+                                    [class.border-danger]="signupForm.get('security_qa').invalid && signupForm.get('security_qa').touched">
+                                    <option  value="" selected>Select your question</option>
+                                <option *ngFor="let c of qa" value="{{c.id}}">{{c.question}}</option>
+                            </select>
+                            <div class="text-danger" *ngIf = "signupForm.get('security_qa').invalid &&  (signupForm.get('security_qa').touched || signupForm.get('security_qa').dirty) ">
+                              <small *ngIf = "signupForm.get('security_qa').errors?.required"> Security Question required</small>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-md-6">
+                            <label for="answer" class="my-2">Answer</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   [class.border-danger]="signupForm.get('answer').invalid && signupForm.get('answer').touched"
+                                   id="answer" formControlName="answer">
+                            <div class="text-danger" *ngIf = "signupForm.get('answer').invalid &&  (signupForm.get('answer').touched || signupForm.get('answer').dirty) ">
+                              <small *ngIf = "signupForm.get('answer').errors?.required"> Answer required</small>
+                            </div>
+                          </div>
+                          </div>
+
+                          <div class="form-group ">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="is_longterm">
+                              <p class="form-check-label" for="gridCheck">
+                     Are you investing long term
+                              </p>
+                           
+                            </div>
+                          </div>
+            
 
                           <div class="form-group my-4">
                             <label for="referal_code" class="my-2">referal code</label>

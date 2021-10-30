@@ -16,11 +16,11 @@ export class TradeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.spinner.show();
-    this.dashboard.ReloadNeeded.subscribe(() => {
-      this.getAccount();
-    });
-    this.getAccount();
+    // this.spinner.show();
+    // this.dashboard.ReloadNeeded.subscribe(() => {
+    //   this.getAccount();
+    // });
+    // this.getAccount();
   }
 
   private getAccount() {

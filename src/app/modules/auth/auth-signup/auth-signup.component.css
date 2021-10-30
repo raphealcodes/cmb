@@ -456,3 +456,20 @@ input {
     margin-top: -100px !important;
 }
 }
+
+
+.field-icon1 {
+    float: right;
+    margin-right: 50%;
+    margin-top: -37px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    color: #83838A;
+  }
+  
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #594a42 !important;
+  }
+  
+  
