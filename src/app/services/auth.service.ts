@@ -77,7 +77,8 @@ export class AuthService {
 
   // ==================== Start Registration for User ================
 
-  registerUser = (data: SignupDTO) => {
+  registerUser = (data: any) => {
+    // data.security_qa = JSON.parse(data.security_qa);
     this.http.post<any>(`${this.API_URL}/auth/register/`, data).subscribe(
       response => {
         const token = response.token;

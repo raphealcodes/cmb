@@ -153,9 +153,32 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
       dob,
       security_qa: {
         answer: answer,
-        security_question_id: security_qa
+        security_question_id: (security_qa).toString(),
       },
     };
+    const a: any = {
+      answer: answer,
+      security_question_id: security_qa
+    };
+    const b = JSON.stringify(a);
+    const formData = new FormData();
+    // for ( let key in a) {
+    //   formData.append(key, a[key]);
+    // }
+    formData.append('first_name', first_name);
+    formData.append('last_name', last_name);
+    formData.append('email', email);
+    formData.append('phone_number', phone.e164Number);
+    formData.append('password', password);
+    formData.append('country', country);
+    formData.append('state', state);
+    formData.append('city', city);
+    formData.append('referal_code', referal_code);
+    formData.append('is_longterm', is_longterm);
+    formData.append('dob', dob);
+    formData.append('security_qa', b);
+
+
 
     if (this.signupForm.get('check').value === true) {
       this.spinner.show();
