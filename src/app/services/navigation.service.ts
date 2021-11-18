@@ -18,7 +18,12 @@ export class NavigationService {
   }
 
   routeDashboard = () => {
-    return this.router.navigate(['/dashboard/trade']);
+    return this.router.navigate(['/dashboard/wallet']);
+  }
+
+  routeFirstVerify = () => {
+    // return this.router.navigate(['/dashboard/wallet']);
+    return this.router.navigate(['/verify-email/verify-identity']);
   }
 
 }

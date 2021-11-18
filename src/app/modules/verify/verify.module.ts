@@ -12,17 +12,25 @@ import { ErrorInterceptor } from 'src/app/utils/interceptor/error-interceptor';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PnotifyService } from 'src/app/services/pnotify.service';
+import { FirstVerifyComponent } from './first-verify/first-verify.component';
 
 
 const verifyRoutes: Routes = [{
   path: '',
-  redirectTo: '/verify-email/verify'
+  component: VerifyComponent,
+  // redirectTo: '/verify-email/verify',
+  children: [
+    {
+      path: 'verify-identity',
+      component: FirstVerifyComponent,
+    },
+    {
+      path: 'verify',
+      component: VerifyEmailComponent,
+    }
+  ]
 },
-{
-  path: 'verify',
-  component: VerifyEmailComponent
-}
-]
+];
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +40,7 @@ const verifyRoutes: Routes = [{
     NgxSpinnerModule
   ],
   exports: [RouterModule],
-  declarations: [VerifyComponent,
+  declarations: [VerifyComponent, FirstVerifyComponent,
   VerifyEmailComponent],
   providers: [AuthGuard, PnotifyService, VerifyGuard, UnAuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },

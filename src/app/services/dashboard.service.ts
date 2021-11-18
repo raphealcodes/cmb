@@ -47,9 +47,12 @@ uploadDoc(data: any) {
    );
  }
 
+ getCurr() {
+  return this.http.get<any>(`${this.API_URL}/core/currencies/`);
+}
 
  postPayment(data: any) {
-  return this.http.post<any>(`${this.API_URL}/core/create_payment/`, data).pipe(
+  return this.http.post<any>(`${this.API_URL}/core/deposit/`, data).pipe(
      tap( () => {this.getReloadNeeded.next(); }
 
      )
@@ -108,7 +111,7 @@ uploadDoc(data: any) {
 }
 
 getInvoices(): any {
-  return this.http.get<any>(`${this.API_URL}/core/invoices/`);
+  return this.http.get<any>(`${this.API_URL}/core/transaction_summary/`);
 }
 
 

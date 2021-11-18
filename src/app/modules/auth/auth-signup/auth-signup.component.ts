@@ -185,7 +185,8 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
       // console.log(data);
       this.auth.registerUser(data);
       localStorage.setItem('email', this.signupForm.get('email').value )
-      this.signupForm.reset();
+      // this.signupForm.reset();
+      // this.signupForm.get(is_longterm).patchValue(false);
     } else {
       this.terms = 'Accept Terms and Conditions before proceeding';
     }

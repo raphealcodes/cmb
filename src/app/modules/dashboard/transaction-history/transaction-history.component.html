@@ -1,19 +1,20 @@
 <ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
 </ngx-spinner>
-<div class="verify-message" *ngIf="account_verified !== 'Accepted'">
+<!-- <div class="verify-message" *ngIf="account_verified !== 'Accepted'">
   <p class="py-3 px-3 mt-2"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Note that your account has not been verified and you are unable to trade. <a routerLink="/dashboard/payment" style="text-decoration: underline;"><span>Click Here To Verify Your Account</span></a></p>
 
-</div>
+</div> -->
 <div class="wrapper">
   
   <div class="container">
     <div class="first-row-container">
       <div class="col-12 filters d-flex justify-content-between pt-5 ">
-        <div class="col-sm-7 col-md-5 col-lg-4" ><select class="form-select" aria-label="Default select example">
+        <div class="col-sm-7 col-md-5 col-lg-4" >
+          <select (change)="switch($event.target.value)" class="form-select" aria-label="Default select example">
           <option selected>Transactions Type</option>
-          <option value="1">All</option>
-          <option value="2">Deposit</option>
-          <option value="3">Withdrawal</option>
+          <!-- <option value="1">All</option> -->
+          <option [value]="'deposit'">Deposit</option>
+          <option [value]="'withdrawal'">Withdrawal</option>
         </select></div>
         <!-- <div class="col-3"><select class="form-select" aria-label="Default select example">
           <option selected>All</option>
@@ -37,8 +38,12 @@
         <span>{{v.created_at | date}}</span>
       </div>
        <div class="d-flex justify-content-between">
-         <p>{{v.tnx_complete === true ? 'Transaction Complete' : 'Awaiting Transaction'}}</p>
-         <p>${{v.value_of_crypto | number}}</p>
+         <p>{{v.status}}</p>
+         <p>{{v.crypto_amount | number}}</p>
+         <p>${{v.fiat_amount | number}}</p>
+      </div>
+      <div>
+        <span>{{v.currency}}</span>
       </div>
       <div>
         <span>{{v.created_at | date:'shortTime'}}</span>

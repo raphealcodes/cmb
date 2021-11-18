@@ -142,14 +142,20 @@ export class AuthService {
 
   // ========================= Verify ==========================
   verifyUser = (data: any) => {
+    const firstLogin = localStorage.getItem('firstLogin');
     this.http.post<any>(`${this.API_URL}/auth/verify_account/`, data).subscribe(
       response => {
         // console.log('Verified Successfully');
         this.isVerify = true;
         localStorage.setItem('verify', 'true');
         this.getVerifyUpdated.next(true);
-        this.navigate.routeDashboard();
-        this.notify.notify(localStorage.getItem('userDetails'));
+        console.log(firstLogin);
+        if (firstLogin === 'true') {
+          this.navigate.routeFirstVerify();
+        } else {
+          this.notify.notify(localStorage.getItem('userDetails'));
+          this.navigate.routeDashboard();
+        }
       });
   }
 

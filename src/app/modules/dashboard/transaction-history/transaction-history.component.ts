@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { DashboardService } from 'src/app/services/dashboard.service';
+import { Component, OnInit } from "@angular/core";
+import { NgxSpinnerService } from "ngx-spinner";
+import { DashboardService } from "src/app/services/dashboard.service";
 
 @Component({
-  selector: 'app-transaction-history',
-  templateUrl: './transaction-history.component.html',
-  styleUrls: ['./transaction-history.component.scss'],
+  selector: "app-transaction-history",
+  templateUrl: "./transaction-history.component.html",
+  styleUrls: ["./transaction-history.component.scss"],
 })
 export class TransactionHistoryComponent implements OnInit {
   data;
   dataInv: any[] = [];
-  account_verified = 'Pending';
+  account_verified = "Pending";
   constructor(
     private dashboard: DashboardService,
     private spinner: NgxSpinnerService
@@ -19,10 +19,10 @@ export class TransactionHistoryComponent implements OnInit {
   ngOnInit() {
     this.spinner.show();
     this.dashboard.ReloadNeeded.subscribe(() => {
-      this.getAccount();
+      // this.getAccount();
       this.getInvoice();
     });
-    this.getAccount();
+    // this.getAccount();
     this.getInvoice();
   }
 
@@ -30,19 +30,31 @@ export class TransactionHistoryComponent implements OnInit {
     this.dashboard.getAccount().subscribe((data: any[]) => {
       this.data = data;
       if (this.data) {
-        this.account_verified = data['0'].owner.user_status;
+        this.account_verified = data["0"].owner.user_status;
       }
     });
     this.spinner.hide();
   }
 
   private getInvoice() {
-    this.dashboard.getInvoices().subscribe((data: any[]) => {
-      this.dataInv = data;
+    this.dashboard.getInvoices().subscribe((data: any) => {
+      this.dataInv = data.deposits;
+      this.spinner.hide();
       if (this.data) {
         // this.account_verified = data['0'].owner.user_status;
       }
     });
-    this.spinner.hide();
+  }
+
+  switch(event: any): void {
+    this.spinner.show();
+    if (event === 'deposit') {
+        this.getInvoice();
+    } else {
+      this.dashboard.getInvoices().subscribe((data: any) => {
+        this.dataInv = data.withdrawal;
+        this.spinner.hide();
+      });
+    }
   }
 }

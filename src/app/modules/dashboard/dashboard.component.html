@@ -11,11 +11,11 @@
               </ul>
               <ul class="sidebar-nav" id="sidebar">
                 
-                  <li>
+                  <!-- <li>
                       <a routerLink="/dashboard/trade" routerLinkActive="active">
                         <i class="fa fa-exchange" aria-hidden="true"></i> Trade
                       </a>
-                    </li>
+                    </li> -->
                     <li>
                       <a routerLink="/dashboard/wallet" routerLinkActive="active">
                         <i class="fa fa-money" aria-hidden="true"></i> Wallet
@@ -26,11 +26,11 @@
                         <i class="fa fa-tachometer" aria-hidden="true"></i> Transaction History
                       </a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a routerLink="/dashboard/analysis" routerLinkActive="active">
                         <i class="fa fa-bar-chart" aria-hidden="true"></i> Analysis
                       </a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                       <a routerLink="/dashboard/withdraw" routerLinkActive="active">
                         <i class="fa fa-money" aria-hidden="true"></i> Withdraw
@@ -41,8 +41,8 @@
                         <i class="fa fa-cog" aria-hidden="true"></i> Account
                       </a>
                     </li>
-                    <li *ngIf="firstPayment" class="header"><a class="btn" routerLink="/dashboard/payment">Deposit</a></li>
-                    <li *ngIf="!firstPayment" class="header"><a class="btn" routerLink="/dashboard/deposit">Deposit</a></li>
+                    <!-- <li *ngIf="firstPayment" class="header"><a class="btn" routerLink="/dashboard/payment">Deposit</a></li> -->
+                    <li  class="header"><a class="btn" routerLink="/dashboard/deposit">Deposit</a></li>
               </ul>
           </div>
       </nav>
@@ -84,11 +84,11 @@
   </li> -->
 
   <nav class="mobile mobile-bottom-nav">
-      <div class="mobile-bottom-nav__item ">
+      <!-- <div class="mobile-bottom-nav__item ">
           <div class="mobile-bottom-nav__item-content">
               <a  routerLink="/dashboard/trade" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"><i class="fa fa-exchange" aria-hidden="true"></i><br> Trade</a>
           </div>		
-      </div>
+      </div> -->
       <div class="mobile-bottom-nav__item ">
           <div class="mobile-bottom-nav__item-content">
               <a routerLink="/dashboard/wallet" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"> <i class="fa fa-money" aria-hidden="true"></i> <br>Wallet</a>
@@ -99,11 +99,11 @@
               <a routerLink="/dashboard/transaction-history" routerLinkActive="mobile-bottom-nav__item--active" class="py-3">      <i class="fa fa-tachometer" aria-hidden="true"></i> <br>Transactions</a>
           </div>
       </div>
-      <div class="mobile-bottom-nav__item">
+      <!-- <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
               <a routerLink="/dashboard/analysis" routerLinkActive="mobile-bottom-nav__item--active" class="py-3"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <br>Analysis</a>
           </div>		
-      </div>
+      </div> -->
       <div class="mobile-bottom-nav__item">
         <div class="mobile-bottom-nav__item-content">
             <a routerLink="/dashboard/account/personal-info" routerLinkActive="mobile-bottom-nav__item--active" class="py-3">  <i class="fa fa-cog" aria-hidden="true"></i><br> Account</a>

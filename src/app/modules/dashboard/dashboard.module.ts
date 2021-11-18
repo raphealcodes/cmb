@@ -44,6 +44,7 @@ export const dashboardRoutes: Routes = [
         path: 'admin',
         component: AdminComponent,
       },
+    
       {
         path: 'admin/:id',
         component: AdminDetailsComponent
@@ -116,7 +117,8 @@ export const dashboardRoutes: Routes = [
     WalletComponent,
     AdminComponent,
     PaymentComponent,
-    AdminDetailsComponent
+    AdminDetailsComponent,
+  
     
   ],
   exports: [RouterModule,  ],

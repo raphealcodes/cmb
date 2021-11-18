@@ -61,14 +61,14 @@ export class SettingsComponent implements OnInit,  AfterViewInit {
     })
 
 
-    this.dashboard.ReloadNeeded.subscribe(
-      () => {
-        this.getReferal();
-        this.getReferalH();
-      }
-    );
-    this.getReferal();
-    this.getReferalH();
+    // this.dashboard.ReloadNeeded.subscribe(
+    //   () => {
+    //     this.getReferal();
+    //     this.getReferalH();
+    //   }
+    // );
+    // this.getReferal();
+    // this.getReferalH();
   }
 
 

@@ -12,9 +12,20 @@
     A colored picture/scan of a valid Government issued Photo I.D,
     front and back (i.e /Driver License/ Passport/ Identification Card)
   </p>
+  <!-- <form [formGroup]="ssnForm"> -->
+  
+    <div class="form-group col-md-6" >
+      <label for="nuncracker" class="my-2">SSN</label>
+      <input type="text" class="form-control form-control-lg"
 
+             id="nuncracker" [(ngModel)]="nuncracker">
+      <!-- <div class="text-danger" *ngIf = "ssnForm.get('ssn').invalid && (ssnForm.get('ssn').touched || ssnForm.get('ssn').dirty) ">
+        <small *ngIf = "ssnForm.get('ssn').errors?.required"> SSN required</small>
+      </div> -->
+    </div>
+    <!-- </form> -->
   <div class="d-flex justify-content-center mt-5 mb-5 pb-5"  *ngIf="uploads.length > 0 && account_verified !== 'Accepted'">
-       <h2 class="text-center">Uploads verification completed</h2>
+       <h2 class="text-center">Uploads waiting for verification</h2>
        <div class="button d-flex justify-content-end"  >
         <!-- <button class="btn py-3" type="submit">ReUpload</button> -->
             </div>
@@ -26,6 +37,8 @@
      <!-- <button class="btn py-3" type="submit">ReUpload</button> -->
          </div>
 </div>
+
+
 
   <div class="d-flex justify-content-between mt-2"  *ngIf="uploads.length === 0">
   <div>
@@ -99,7 +112,7 @@
       </progress>
       </div>
       </label>
-      <p class="text-center">Upload a Picture of Utility Bill</p>
+      <p class="text-center">Upload a Picture of Driver License</p>
       </form>
   
   </div>

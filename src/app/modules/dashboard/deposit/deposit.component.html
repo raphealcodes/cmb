@@ -1,18 +1,26 @@
 
-
-<div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
+<div  class="d-flex justify-content-center mt-4">
     <h3 class="text-center">Deposit</h3>
 </div>
-<div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+<div class="d-flex justify-content-center mt-4">
     <form [formGroup]="payForm">
-        <input type="number" placeholder="amount" class="form-control form-control-lg" formControlName="amount" (input)="input()">
+     <div class="pb-5">
+       <label for="">Coin Available</label>
+        <select formControlName="currency" class="form-select form-select-lg">
+          <option value="" selected="selected">Select Coin</option>
+          <option *ngFor="let b of data" [value]="b.id" selected="selected">{{b.name}}({{b.symbol}})</option>
+        </select>
+      </div>
+        <input type="number" placeholder="amount" class="form-control form-control-lg" formControlName="fiat_amount" (input)="input()">
     </form>
 </div>
- <div *ngIf= 'show ==="true"' class="d-flex justify-content-center mt-4">
+ <div  class="d-flex justify-content-center mt-4">
     <button class="btn py-2 pointer" (click)="pay()">Pay {{amountLabel}}</button>
   </div>
 
-
+<!-- 
   <div *ngIf= 'show ==="false"' class="mt-5">
     <h3 class="text-center">Scan to Pay</h3>
     <div  class="d-flex justify-content-center">
@@ -27,4 +35,4 @@
   <div class="skip d-flex justify-content-center mt-5">
     <a class="pointer"  (click)='show = "true"'>Back</a>
   </div>
-  </div>
+  </div> -->
